@@ -28,3 +28,49 @@ document.querySelectorAll('img[data-fallback]').forEach((image) => {
     image.src = image.dataset.fallback;
   });
 });
+
+const lightbox = document.querySelector('.lightbox');
+const lightboxImage = lightbox.querySelector('img');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+const galleryImages = document.querySelectorAll('.showcase .work img');
+
+function setLightbox(open, image) {
+  document.body.classList.toggle('lightbox-open', open);
+  lightbox.classList.toggle('is-open', open);
+  lightbox.setAttribute('aria-hidden', String(!open));
+
+  if (open && image) {
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt || '';
+    lightboxClose.focus();
+  }
+
+  if (!open) {
+    lightboxImage.src = '';
+    lightboxImage.alt = '';
+  }
+}
+
+galleryImages.forEach((image) => {
+  image.setAttribute('tabindex', '0');
+  image.setAttribute('role', 'button');
+  image.setAttribute('aria-label', `${image.alt || '作品画像'}を拡大表示`);
+
+  image.addEventListener('click', () => setLightbox(true, image));
+  image.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setLightbox(true, image);
+    }
+  });
+});
+
+lightboxClose.addEventListener('click', () => setLightbox(false));
+
+lightbox.addEventListener('click', (event) => {
+  if (event.target === lightbox) setLightbox(false);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setLightbox(false);
+});
