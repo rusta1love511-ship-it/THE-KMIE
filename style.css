@@ -197,7 +197,7 @@ h1 em { color: var(--red); font-style: normal; }
   font-weight: 700;
 }
 .external-links a:last-child { border-bottom: 1px solid rgba(10,10,10,.35); }
-.external-links b { font-size: 20px; transition: transform .25s; }
+.external-links b { display: none; font-size: 20px; transition: transform .25s; }
 .external-links a:hover b { transform: translate(5px, -5px); }
 
 .lightbox {
@@ -274,6 +274,7 @@ footer p { margin: 0; color: #909090; font-size: 10px; line-height: 1.6; letter-
   .work img { height: min(55vw, 720px); }
   .work-tall img { height: min(65vw, 820px); }
   .links-section { grid-template-columns: 1.3fr .7fr; min-height: 80vh; align-items: center; }
+  .external-links b { display: block; }
   footer { grid-template-columns: 1fr 1fr auto; align-items: start; }
 }
 
