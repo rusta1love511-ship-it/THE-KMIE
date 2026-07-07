@@ -159,7 +159,7 @@ h1 em { color: var(--red); font-style: normal; }
   scrollbar-width: none;
 }
 .gallery::-webkit-scrollbar { display: none; }
-.work { flex: 0 0 78vw; scroll-snap-align: start; }
+.work { flex: 0 0 38vw; scroll-snap-align: start; }
 .work img { height: min(105vw, 520px); object-fit: cover; cursor: zoom-in; }
 .work img.image-contain-90 {
   padding: 5%;
