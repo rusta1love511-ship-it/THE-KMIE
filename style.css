@@ -89,6 +89,7 @@ button { color: inherit; font: inherit; }
 .menu a:hover, .menu a:focus-visible { color: var(--red); }
 
 .hero {
+  padding-top: 96px;
   color: var(--black);
   background: #fff;
 }
@@ -194,6 +195,7 @@ footer p { margin: 0; color: #909090; font-size: 10px; line-height: 1.6; letter-
 
 @media (min-width: 720px) {
   .site-header { padding-bottom: 48px; }
+  .hero { padding-top: 0; }
   .hero-copy { padding-top: 24px; }
   .showcase { padding: 160px 0; }
   .section-header { display: grid; grid-template-columns: 1fr 1fr; align-items: end; }
