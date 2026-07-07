@@ -162,23 +162,23 @@ h1 em { color: var(--red); font-style: normal; }
   display: grid;
   padding: 120px var(--pad);
   gap: 70px;
-  color: var(--white);
-  background: var(--red);
+  color: var(--black);
+  background: #dceeff;
 }
-.links-section .section-number { color: var(--black); }
+.links-section .section-number { color: var(--red); }
 .links-section h2 { font-size: clamp(54px, 14vw, 128px); }
-.links-section h2 span { color: var(--black); }
+.links-section h2 span { color: var(--red); }
 .external-links { align-self: end; }
 .external-links a {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px 0;
-  border-top: 1px solid rgba(255,255,255,.55);
+  border-top: 1px solid rgba(10,10,10,.35);
   font-size: clamp(20px, 4vw, 30px);
   font-weight: 700;
 }
-.external-links a:last-child { border-bottom: 1px solid rgba(255,255,255,.55); }
+.external-links a:last-child { border-bottom: 1px solid rgba(10,10,10,.35); }
 .external-links b { font-size: 20px; transition: transform .25s; }
 .external-links a:hover b { transform: translate(5px, -5px); }
 
