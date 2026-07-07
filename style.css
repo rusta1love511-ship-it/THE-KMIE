@@ -160,11 +160,11 @@ h1 em { color: var(--red); font-style: normal; }
   padding: 120px var(--pad);
   gap: 70px;
   color: var(--black);
-  background: #dceeff;
+  background: #185D86;
 }
-.links-section .section-number { color: var(--red); }
+.links-section .section-number { color: #CA2A50; }
 .links-section h2 { font-size: clamp(54px, 14vw, 128px); }
-.links-section h2 span { color: var(--red); }
+.links-section h2 span { color: #CA2A50; }
 .external-links { align-self: end; }
 .external-links a {
   display: flex;
