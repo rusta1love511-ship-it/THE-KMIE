@@ -32,6 +32,9 @@ document.querySelectorAll('img[data-fallback]').forEach((image) => {
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = lightbox.querySelector('img');
 const lightboxClose = lightbox.querySelector('.lightbox-close');
+const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+const lightboxCaptionTitle = lightboxCaption.querySelector('h3');
+const lightboxCaptionText = lightboxCaption.querySelector('p');
 const galleryImages = document.querySelectorAll('.showcase .work img');
 
 function setLightbox(open, image) {
@@ -40,14 +43,25 @@ function setLightbox(open, image) {
   lightbox.setAttribute('aria-hidden', String(!open));
 
   if (open && image) {
+    const work = image.closest('.work');
+    const title = work?.querySelector('.work-meta h3')?.textContent || '';
+    const text = work?.querySelector('.work-meta p')?.textContent || image.alt || '';
+
     lightboxImage.src = image.currentSrc || image.src;
     lightboxImage.alt = image.alt || '';
+    lightboxCaptionTitle.textContent = title;
+    lightboxCaptionText.textContent = text;
+    lightboxCaption.hidden = !title && !text;
+    lightbox.scrollTop = 0;
     lightboxClose.focus();
   }
 
   if (!open) {
     lightboxImage.src = '';
     lightboxImage.alt = '';
+    lightboxCaptionTitle.textContent = '';
+    lightboxCaptionText.textContent = '';
+    lightboxCaption.hidden = false;
   }
 }
 
