@@ -45,7 +45,7 @@ function setLightbox(open, image) {
   if (open && image) {
     const work = image.closest('.work');
     const title = work?.querySelector('.work-meta h3')?.textContent || '';
-    const text = image.dataset.modalDescription || work?.querySelector('.work-meta p')?.textContent || image.alt || '';
+    const text = image.dataset.modalDescription || 'テスト中';
 
     lightboxImage.src = image.currentSrc || image.src;
     lightboxImage.alt = image.alt || '';
